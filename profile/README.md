@@ -36,37 +36,37 @@ pages link to the public product site.
 
 | Product | Built for | What it runs | Status |
 | --- | --- | --- | --- |
-| [**Restaurant OS**](https://www.shatasolutions.com/restaurant-os) | Restaurants and cafés | QR table ordering, kitchen screens, cashier stations and white-label branding — each restaurant an isolated tenant | Live |
-| [**Hospitality OS**](https://www.shatasolutions.com/hospitality-os) | Hotels and resorts | Reservations, front desk, folios, housekeeping and reporting, in Arabic and English | Live demo |
-| [**Healthcare OS**](https://www.shatasolutions.com/healthcare-os) | Clinics | Installable clinical and operational web app; real patient data stays closed until activation gates are met | Live app · PHI closed |
-| [**Construction OS**](https://www.shatasolutions.com/construction-os) | Contractors | Quantities, BOQ, variations, procurement, cost control and client billing for office and field | Assisted pilot |
-| [**Trade OS**](https://www.shatasolutions.com/trade-os) | Importers and exporters | One trade case per shipment: compliance, documents, landed cost and an append-only audit trail | Live demo |
-| [**Commerce OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · live demo |
-| [**AutoCare OS**](https://www.shatasolutions.com/autocare-os) | Auto service centres | Intake to invoice for repair, PPF and detailing, with a verified service history per vehicle | Demo on request |
-| [**Automotive OS**](https://www.shatasolutions.com/automotive-os) | Used-car dealers | True cost per vehicle, owner-only margin, inventory aging, leads and the sales pipeline, Arabic first | Demo ready |
-| [**Energy OS**](https://www.shatasolutions.com/energy-os) | Oil & gas operators | Industrial safety memory: incidents, findings, corrective actions and evidence in one governed workspace with human-decided closure | Live demo |
+| [**Restaurant&nbsp;OS**](https://www.shatasolutions.com/restaurant-os) | Restaurants and cafés | QR table ordering, kitchen screens, cashier stations and white-label branding — each restaurant an isolated tenant | Live |
+| [**Hospitality&nbsp;OS**](https://www.shatasolutions.com/hospitality-os) | Hotels and resorts | Reservations, front desk, folios, housekeeping and reporting, in Arabic and English | Live demo |
+| [**Healthcare&nbsp;OS**](https://www.shatasolutions.com/healthcare-os) | Clinics | Installable clinical and operational web app; real patient data stays closed until activation gates are met | Live app · PHI closed |
+| [**Construction&nbsp;OS**](https://www.shatasolutions.com/construction-os) | Contractors | Quantities, BOQ, variations, procurement, cost control and client billing for office and field | Assisted pilot |
+| [**Trade&nbsp;OS**](https://www.shatasolutions.com/trade-os) | Importers and exporters | One trade case per shipment: compliance, documents, landed cost and an append-only audit trail | Live demo |
+| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · live demo |
+| [**AutoCare&nbsp;OS**](https://www.shatasolutions.com/autocare-os) | Auto service centres | Intake to invoice for repair, PPF and detailing, with a verified service history per vehicle | Demo on request |
+| [**Automotive&nbsp;OS**](https://www.shatasolutions.com/automotive-os) | Used-car dealers | True cost per vehicle, owner-only margin, inventory aging, leads and the sales pipeline, Arabic first | Demo ready |
+| [**Energy&nbsp;OS**](https://www.shatasolutions.com/energy-os) | Oil & gas operators | Industrial safety memory: incidents, findings, corrective actions and evidence in one governed workspace with human-decided closure | Live demo |
 
 ### AI & Intelligence
 
 | Product | What it is | Status |
 | --- | --- | --- |
-| [**Markets OS**](https://www.shatasolutions.com/markets-os) | Capital-markets intelligence terminal for Egypt (EGX) and the US, on clearly labelled demonstration data. Not advice, not a brokerage | Evaluation |
+| [**Markets&nbsp;OS**](https://www.shatasolutions.com/markets-os) | Capital-markets intelligence terminal for Egypt (EGX) and the US, on clearly labelled demonstration data. Not advice, not a brokerage | Evaluation |
 | **Codingo** | An independent agent operating system: models propose, a deterministic core decides, gates, executes and rolls back | In development |
-| **Shata One** | A secure mobile chief of staff that prepares the day and waits for your approval before it acts | In development |
+| **Shata&nbsp;One** | A secure mobile chief of staff that prepares the day and waits for your approval before it acts | In development |
 
 ### Restaurant ecosystem
 
 | Product | What it is | Status |
 | --- | --- | --- |
-| [**Self Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Live demo |
-| [**Shata Cashier**](https://www.shatasolutions.com/install/shata-cashier) | Native desktop cashier station for Restaurant OS, activated with a device code from Shata Console | Awaiting code signing |
+| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Live demo |
+| [**Shata&nbsp;Cashier**](https://www.shatasolutions.com/install/shata-cashier) | Native desktop cashier station for Restaurant OS, activated with a device code from Shata Console | Awaiting code signing |
 
 ### Platform & infrastructure
 
 | Component | What it does |
 | --- | --- |
-| **Shata Control Plane** | Identity, organizations, memberships, entitlements and provisioning. Issues signed access decisions that every product enforces |
-| **Shata Platform** | Versioned shared packages: contracts, configuration, identity, product access, onboarding, activation, device runtime and intelligence runtime |
+| **Shata&nbsp;Control&nbsp;Plane** | Identity, organizations, memberships, entitlements and provisioning. Issues signed access decisions that every product enforces |
+| **Shata&nbsp;Platform** | Versioned shared packages: contracts, configuration, identity, product access, onboarding, activation, device runtime and intelligence runtime |
 
 <details>
 <summary><b>Also on shatasolutions.com</b> — automation, actors and digital services</summary>
@@ -100,23 +100,18 @@ website.
 ## How it fits together
 
 ```mermaid
-flowchart LR
-  subgraph CP["Shata Control Plane"]
-    ID["Identity"] --- ORG["Organizations"] --- ENT["Entitlements"]
-  end
-  subgraph PL["Shata Platform packages"]
-    PA["Product access"]
-    DR["Device runtime<br/>offline queue · reconciliation"]
-    IR["Intelligence runtime<br/>governed AI"]
-  end
-  CP -- "signed access decision" --> PA
-  PA --> P1["Restaurant OS"]
-  PA --> P2["Hospitality OS"]
-  PA --> P3["Healthcare OS"]
-  PA --> P4["Construction · Trade · Commerce · AutoCare · …"]
-  DR -.-> P1
-  DR -.-> P4
-  IR -.-> P1
+flowchart TB
+  CP["<b>Shata Control Plane</b><br/>identity · organizations · entitlements"]
+  PL["<b>Shata Platform</b><br/>product access · device runtime · intelligence runtime"]
+  CP -- "signed access decision" --> PL
+  PL --> R["Restaurant OS"] & H["Hospitality OS"] & HC["Healthcare OS"] & C["Construction OS"]
+  PL --> T["Trade OS"] & M["Commerce OS"] & A["AutoCare OS"] & E["…"]
+  classDef core fill:#1D4ED8,stroke:#93C5FD,color:#FFFFFF
+  classDef plat fill:#0F172A,stroke:#22D3EE,color:#E2E8F0
+  classDef prod fill:#111827,stroke:#475569,color:#E2E8F0
+  class CP core
+  class PL plat
+  class R,H,HC,C,T,M,A,E prod
 ```
 
 Each product owns its own business data and database. The control plane holds only
