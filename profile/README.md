@@ -1,71 +1,167 @@
-<p align="center">
-  <a href="https://shatasolutions.github.io/shatasolutions/">
-    <img src="assets/hero-motion.gif" alt="Animated title sequence: the Shata Solutions wordmark ignites over a drifting grid; a central engineering core assembles a platform ring; industry systems rise; the sequence locks up on: Building intelligent operating systems for real-world industries." width="100%">
-  </a>
-  <br>
-  <sub><a href="https://shatasolutions.github.io/shatasolutions/">▶ Watch the full motion experience</a></sub>
-</p>
-
-<h3 align="center">Product Engineering &amp; Intelligent Operating Systems</h3>
-<p align="center"><em>AI-powered when useful. Fully human-operable by design.</em></p>
+<a href="https://www.shatasolutions.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-2560x1120.jpg">
+    <img src="assets/hero-light-2560x1120.jpg" width="100%" alt="Shata Solutions — Engineering Intelligent Systems. Software platforms, AI infrastructure and business operating systems, arranged around one shared control plane.">
+  </picture>
+</a>
 
 <p align="center">
-  <a href="https://shatasolutions.com">Website</a> ·
-  <a href="#what-we-build">What we build</a> ·
-  <a href="#how-we-engineer">How we engineer</a> ·
-  <a href="#open-source">Open source</a> ·
-  <a href="#contact">Contact</a>
+  <a href="https://www.shatasolutions.com"><b>Website</b></a> &nbsp;·&nbsp;
+  <a href="#product-families"><b>Products</b></a> &nbsp;·&nbsp;
+  <a href="#how-it-fits-together"><b>Architecture</b></a> &nbsp;·&nbsp;
+  <a href="#how-we-engineer"><b>Engineering</b></a> &nbsp;·&nbsp;
+  <a href="#open-source"><b>Open source</b></a> &nbsp;·&nbsp;
+  <a href="#work-with-us"><b>Contact</b></a>
 </p>
 
 ---
 
-Shata Solutions is a product-engineering company. We build vertical operating
-systems — complete, opinionated software platforms for running a real business in a
-specific industry — on one shared engineering foundation.
+**Shata Solutions is a software engineering company.** We design and build complete
+operating systems for real businesses — restaurants, hotels, clinics, contractors,
+retailers, traders and service centres — together with the AI and platform
+infrastructure they run on.
 
-1. **AI is optional, never load-bearing.** Every system has a complete manual
-   *Human Mode*; AI features assist, they don't gate operations.
-2. **Offline-first where the business needs it.** Point-of-sale and floor operations
-   keep working when the connection doesn't.
-3. **Measurable engineering discipline.** Every repository is held to a published
-   blueprint and scored by an open-source checker.
+Every product is built on one shared foundation: a single control plane for identity,
+organizations and entitlements, versioned platform packages, an offline-first device
+runtime and a governed AI runtime. That is why a new Shata product starts from proven
+infrastructure instead of from zero.
 
-## What we build
+## Product families
 
-Most product repositories are private while in active development; they are listed
-for breadth, not linkable. Status follows each product's own documentation
-(*Concept → Foundation → In development → Pilot-ready → Production*).
+Statuses below are the public status of each product, as stated on
+[shatasolutions.com](https://www.shatasolutions.com). Product source code is private;
+pages link to the public product site.
 
-| System | Industry | Status |
+### Business Operating Systems
+
+| Product | Built for | What it runs | Status |
+| --- | --- | --- | --- |
+| [**Restaurant&nbsp;OS**](https://www.shatasolutions.com/restaurant-os) | Restaurants and cafés | QR table ordering, kitchen screens, cashier stations and white-label branding — each restaurant an isolated tenant | Live |
+| [**Hospitality&nbsp;OS**](https://www.shatasolutions.com/hospitality-os) | Hotels and resorts | Reservations, front desk, folios, housekeeping and reporting, in Arabic and English | Live demo |
+| [**Healthcare&nbsp;OS**](https://www.shatasolutions.com/healthcare-os) | Clinics | Installable clinical and operational web app; real patient data stays closed until activation gates are met | Live app · PHI closed |
+| [**Construction&nbsp;OS**](https://www.shatasolutions.com/construction-os) | Contractors | Quantities, BOQ, variations, procurement, cost control and client billing for office and field | Assisted pilot |
+| [**Trade&nbsp;OS**](https://www.shatasolutions.com/trade-os) | Importers and exporters | One trade case per shipment: compliance, documents, landed cost and an append-only audit trail | Live demo |
+| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · live demo |
+| [**AutoCare&nbsp;OS**](https://www.shatasolutions.com/autocare-os) | Auto service centres | Intake to invoice for repair, PPF and detailing, with a verified service history per vehicle | Demo on request |
+| [**Automotive&nbsp;OS**](https://www.shatasolutions.com/automotive-os) | Used-car dealers | True cost per vehicle, owner-only margin, inventory aging, leads and the sales pipeline, Arabic first | Demo ready |
+| [**Energy&nbsp;OS**](https://www.shatasolutions.com/energy-os) | Oil & gas operators | Industrial safety memory: incidents, findings, corrective actions and evidence in one governed workspace with human-decided closure | Live demo |
+
+### AI & Intelligence
+
+| Product | What it is | Status |
 | --- | --- | --- |
-| **Codingo** | Software engineering — independent Agent Operating System | In development |
-| **AutoCare OS** | Auto service centers | Pilot-ready |
-| **Commerce OS** | Retail / supermarkets | In development |
-| **Restaurant OS** | Restaurants | In development |
-| **Hospitality OS** | Hotels | In development |
-| **Trade OS** | Import / export | In development |
-| **Energy OS** | Fuel & energy retail | In development |
-| **Automotive Dealer OS** | Used-car dealerships | Foundation |
-| **Shata Platform** | Shared `@shata/*` packages and contracts | In development |
+| [**Markets&nbsp;OS**](https://www.shatasolutions.com/markets-os) | Capital-markets intelligence terminal for Egypt (EGX) and the US, on clearly labelled demonstration data. Not advice, not a brokerage | Evaluation |
+| **Codingo** | An independent agent operating system: models propose, a deterministic core decides, gates, executes and rolls back | In development |
+| **Shata&nbsp;One** | A secure mobile chief of staff that prepares the day and waits for your approval before it acts | In development |
+
+### Restaurant ecosystem
+
+| Product | What it is | Status |
+| --- | --- | --- |
+| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Live demo |
+| [**Shata&nbsp;Cashier**](https://www.shatasolutions.com/install/shata-cashier) | Native desktop cashier station for Restaurant OS, activated with a device code from Shata Console | Awaiting code signing |
+
+### Platform & infrastructure
+
+| Component | What it does |
+| --- | --- |
+| **Shata&nbsp;Control&nbsp;Plane** | Identity, organizations, memberships, entitlements and provisioning. Issues signed access decisions that every product enforces |
+| **Shata&nbsp;Platform** | Versioned shared packages: contracts, configuration, identity, product access, onboarding, activation, device runtime and intelligence runtime |
+
+<details>
+<summary><b>Also on shatasolutions.com</b> — automation, actors and digital services</summary>
+<br>
+
+The [Automation Platform](https://www.shatasolutions.com/services/automation), the
+[Actor Library](https://www.shatasolutions.com/actors),
+[website templates](https://www.shatasolutions.com/templates) and the company's digital
+services (websites, branding, business setup) run on the same codebase as the public
+website.
+
+</details>
+
+## Featured on the web
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/restaurant-os"><img src="assets/web/restaurant-os.jpg" alt="Restaurant OS product page on shatasolutions.com"></a><br><b>Restaurant OS</b><br><sub>The operating system your restaurant runs on.</sub></td>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/healthcare-os"><img src="assets/web/healthcare-os.jpg" alt="Healthcare OS product page on shatasolutions.com"></a><br><b>Healthcare OS</b><br><sub>Installable clinical platform, PHI-gated.</sub></td>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/construction-os"><img src="assets/web/construction-os.jpg" alt="Construction OS product page on shatasolutions.com"></a><br><b>Construction OS</b><br><sub>From estimate to handover.</sub></td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/trade-os"><img src="assets/web/trade-os.jpg" alt="Trade OS product page on shatasolutions.com"></a><br><b>Trade OS</b><br><sub>Trade operations control tower for cargo owners.</sub></td>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/autocare-os"><img src="assets/web/autocare-os.jpg" alt="AutoCare OS product page on shatasolutions.com"></a><br><b>AutoCare OS</b><br><sub>The service-centre loop, intake to invoice.</sub></td>
+    <td width="33%" valign="top"><a href="https://www.shatasolutions.com/hospitality-os"><img src="assets/web/hospitality-os.jpg" alt="Hospitality OS product page on shatasolutions.com"></a><br><b>Hospitality OS</b><br><sub>One operating system for the entire hotel.</sub></td>
+  </tr>
+</table>
+
+<sub>Captures of the public product pages, 2026-10-29.</sub>
+
+## How it fits together
+
+```mermaid
+flowchart TB
+  CP["<b>Shata Control Plane</b><br/>identity · organizations · entitlements"]
+  PL["<b>Shata Platform</b><br/>product access · device runtime · intelligence runtime"]
+  CP -- "signed access decision" --> PL
+  PL --> R["Restaurant OS"] & H["Hospitality OS"] & HC["Healthcare OS"] & C["Construction OS"]
+  PL --> T["Trade OS"] & M["Commerce OS"] & A["AutoCare OS"] & E["…"]
+  classDef core fill:#1D4ED8,stroke:#93C5FD,color:#FFFFFF
+  classDef plat fill:#0F172A,stroke:#22D3EE,color:#E2E8F0
+  classDef prod fill:#111827,stroke:#475569,color:#E2E8F0
+  class CP core
+  class PL plat
+  class R,H,HC,C,T,M,A,E prod
+```
+
+Each product owns its own business data and database. The control plane holds only
+identity and entitlement facts and never a business record; products verify its signed
+decision themselves and keep working through short outages instead of failing open.
 
 ## How we engineer
 
-Our Engineering OS — a handbook of standards covering repository blueprint, git,
-AI-assisted engineering, offline-first, financial engineering and AI/Human
-operation — governs every repository and is mechanically enforced in CI by a public,
-zero-dependency checker that computes a heuristic Engineering Score (a floor, not a
-certification). Status claims must match implementation truth; prototypes are
-labeled as prototypes. The same rule applies to this page.
+- **AI is optional, never load-bearing.** Every AI feature has a complete manual
+  counterpart. Deterministic code owns money, stock, permissions and compliance state;
+  models read snapshots and propose.
+- **Offline-first where the business needs it.** Point-of-sale, kitchen and field
+  operations keep working without a connection and reconcile idempotently.
+- **Tenant isolation in the database.** Row-level security and composite keys make
+  cross-tenant access a database error, not a code review finding.
+- **Every change leaves evidence.** Append-only audit logs, transactional outboxes,
+  release evidence gates and rehearsed backup and restore.
+- **Status claims match the code.** Prototypes are labelled prototypes, demo data is
+  labelled demo data, and simulated integrations say so on their own output.
+
+All repositories follow one engineering handbook and repository blueprint, checked
+mechanically in CI by our open-source tooling.
+
+<details>
+<summary><b>Technology we work in</b></summary>
+<br>
+
+| Area | In production code today |
+| --- | --- |
+| Languages | TypeScript (strict), SQL |
+| Web & apps | Next.js, React, React Native / Expo, Electron, PWAs |
+| Services | NestJS, Node.js, Prisma, PostgreSQL with row-level security, Redis |
+| Identity | Supabase Auth (ES256 / JWKS), signed entitlement grants |
+| AI | Provider-isolated model gateways, prompt registry, provenance and usage records |
+| Delivery | Turborepo, GitHub Actions, Docker, Railway, Vercel, infrastructure as code |
+| Quality | Vitest, Playwright, Maestro, contract tests, backup/restore drills |
+
+</details>
 
 ## Open source
 
 | Project | What it does |
 | --- | --- |
-| [`engineering-os-tools`](https://github.com/shatasolutions/engineering-os-tools) | Repository blueprint checker, engineering-score tool and matching reusable GitHub Actions workflows. MIT. |
+| [`engineering-os-tools`](https://github.com/shata-solutions/engineering-os-tools) | Zero-dependency repository blueprint checker and engineering-score tool, with reusable GitHub Actions workflows. MIT. |
 
-## Contact
+## Work with us
 
-- **Web:** [shatasolutions.com](https://shatasolutions.com)
-- **Email:** [admin@shatasolutions.com](mailto:admin@shatasolutions.com) — partnerships, pilots and engineering roles.
+- **Website:** [shatasolutions.com](https://www.shatasolutions.com)
+- **Pilots, partnerships and sales:** [sales@shatasolutions.com](mailto:sales@shatasolutions.com)
+- **General enquiries:** [info@shatasolutions.com](mailto:info@shatasolutions.com)
+- **Security reports:** see [SECURITY.md](https://github.com/shata-solutions/.github/blob/main/SECURITY.md)
 
-<sub>Nothing here claims a production system that is not in production.</sub>
+<sub>Nothing on this page claims a capability, customer or production status that the product's own documentation does not support.</sub>
