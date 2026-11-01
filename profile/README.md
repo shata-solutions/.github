@@ -9,7 +9,7 @@
   <a href="https://www.shatasolutions.com"><b>Website</b></a> &nbsp;·&nbsp;
   <a href="#product-families"><b>Products</b></a> &nbsp;·&nbsp;
   <a href="#how-it-fits-together"><b>Architecture</b></a> &nbsp;·&nbsp;
-  <a href="#how-we-engineer"><b>Engineering</b></a> &nbsp;·&nbsp;
+  <a href="https://www.shatasolutions.com/engineering"><b>Engineering</b></a> &nbsp;·&nbsp;
   <a href="#open-source"><b>Open source</b></a> &nbsp;·&nbsp;
   <a href="#work-with-us"><b>Contact</b></a>
 </p>
@@ -119,6 +119,8 @@ identity and entitlement facts and never a business record; products verify its 
 decision themselves and keep working through short outages instead of failing open.
 
 ## How we engineer
+
+The full picture is on [shatasolutions.com/engineering](https://www.shatasolutions.com/engineering).
 
 - **AI is optional, never load-bearing.** Every AI feature has a complete manual
   counterpart. Deterministic code owns money, stock, permissions and compliance state;
