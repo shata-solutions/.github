@@ -159,11 +159,30 @@ mechanically in CI by our open-source tooling.
 | --- | --- |
 | [`engineering-os-tools`](https://github.com/shata-solutions/engineering-os-tools) | Zero-dependency repository blueprint checker and engineering-score tool, with reusable GitHub Actions workflows. MIT. |
 
+The same checks gate every Shata repository. Run them on yours:
+
+```bash
+git clone https://github.com/shata-solutions/engineering-os-tools.git
+node engineering-os-tools/scripts/check-repo-blueprint.mjs /path/to/your/repo
+node engineering-os-tools/scripts/engineering-score.mjs /path/to/your/repo
+```
+
+Or call them from CI with no secrets and no setup:
+
+```yaml
+jobs:
+  blueprint:
+    uses: shata-solutions/engineering-os-tools/.github/workflows/repo-blueprint-check.yml@v1
+```
+
 ## Work with us
 
-- **Website:** [shatasolutions.com](https://www.shatasolutions.com)
-- **Pilots, partnerships and sales:** [sales@shatasolutions.com](mailto:sales@shatasolutions.com)
-- **General enquiries:** [info@shatasolutions.com](mailto:info@shatasolutions.com)
-- **Security reports:** see [SECURITY.md](https://github.com/shata-solutions/.github/blob/main/SECURITY.md)
+| | Best for |
+| --- | --- |
+| [shatasolutions.com](https://www.shatasolutions.com) | Product pages, live demos and the [engineering overview](https://www.shatasolutions.com/engineering) |
+| [sales@shatasolutions.com](mailto:sales@shatasolutions.com) | Pilots, partnerships and commercial enquiries |
+| [support@shatasolutions.com](mailto:support@shatasolutions.com) | Help for existing customers — see [SUPPORT.md](https://github.com/shata-solutions/.github/blob/main/SUPPORT.md) |
+| [info@shatasolutions.com](mailto:info@shatasolutions.com) | Everything else |
+| [SECURITY.md](https://github.com/shata-solutions/.github/blob/main/SECURITY.md) | Reporting a vulnerability privately |
 
 <sub>Nothing on this page claims a capability, customer or production status that the product's own documentation does not support.</sub>
