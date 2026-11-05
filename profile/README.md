@@ -1,5 +1,7 @@
 <a href="https://www.shatasolutions.com">
   <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark-1440x1720.jpg">
+    <source media="(max-width: 600px)" srcset="assets/hero-mobile-light-1440x1720.jpg">
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-2560x1120.jpg">
     <img src="assets/hero-light-2560x1120.jpg" width="100%" alt="Shata Solutions — Engineering Intelligent Systems. Software platforms, AI infrastructure and business operating systems, arranged around one shared control plane.">
   </picture>
@@ -41,7 +43,7 @@ pages link to the public product site.
 | [**Healthcare&nbsp;OS**](https://www.shatasolutions.com/healthcare-os) | Clinics | Installable clinical and operational web app; real patient data stays closed until activation gates are met | Live app · PHI closed |
 | [**Construction&nbsp;OS**](https://www.shatasolutions.com/construction-os) | Contractors | Quantities, BOQ, variations, procurement, cost control and client billing for office and field | Assisted pilot |
 | [**Trade&nbsp;OS**](https://www.shatasolutions.com/trade-os) | Importers and exporters | One trade case per shipment: compliance, documents, landed cost and an append-only audit trail | Live demo |
-| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · live demo |
+| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · guided demo |
 | [**AutoCare&nbsp;OS**](https://www.shatasolutions.com/autocare-os) | Auto service centres | Intake to invoice for repair, PPF and detailing, with a verified service history per vehicle | Demo on request |
 | [**Automotive&nbsp;OS**](https://www.shatasolutions.com/automotive-os) | Used-car dealers | True cost per vehicle, owner-only margin, inventory aging, leads and the sales pipeline, Arabic first | Demo ready |
 | [**Energy&nbsp;OS**](https://www.shatasolutions.com/energy-os) | Oil & gas operators | Industrial safety memory: incidents, findings, corrective actions and evidence in one governed workspace with human-decided closure | Live demo |
@@ -58,7 +60,7 @@ pages link to the public product site.
 
 | Product | What it is | Status |
 | --- | --- | --- |
-| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Live demo |
+| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Pilot on request |
 | [**Shata&nbsp;Cashier**](https://www.shatasolutions.com/install/shata-cashier) | Native desktop cashier station for Restaurant OS, activated with a device code from Shata Console | Awaiting code signing |
 
 ### Platform & infrastructure
