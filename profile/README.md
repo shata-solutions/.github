@@ -1,5 +1,7 @@
 <a href="https://www.shatasolutions.com">
   <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark-1440x1720.jpg">
+    <source media="(max-width: 600px)" srcset="assets/hero-mobile-light-1440x1720.jpg">
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark-2560x1120.jpg">
     <img src="assets/hero-light-2560x1120.jpg" width="100%" alt="Shata Solutions — Engineering Intelligent Systems. Software platforms, AI infrastructure and business operating systems, arranged around one shared control plane.">
   </picture>
@@ -10,6 +12,7 @@
   <a href="#product-families"><b>Products</b></a> &nbsp;·&nbsp;
   <a href="#how-it-fits-together"><b>Architecture</b></a> &nbsp;·&nbsp;
   <a href="https://www.shatasolutions.com/engineering"><b>Engineering</b></a> &nbsp;·&nbsp;
+  <a href="#verify-it-yourself"><b>Verify</b></a> &nbsp;·&nbsp;
   <a href="#open-source"><b>Open source</b></a> &nbsp;·&nbsp;
   <a href="#work-with-us"><b>Contact</b></a>
 </p>
@@ -26,6 +29,21 @@ organizations and entitlements, versioned platform packages, an offline-first de
 runtime and a governed AI runtime. That is why a new Shata product starts from proven
 infrastructure instead of from zero.
 
+Shata Solutions was founded and is led by **Mostafa Shata**
+([@shatasolutions](https://github.com/shatasolutions)), founder and full-stack developer.
+
+## Verify it yourself
+
+Product source code is private. This is what anyone can check without an account or a sales call:
+
+| What | Where | What it shows |
+| --- | --- | --- |
+| Live product demos | [Restaurant&nbsp;OS](https://www.shatasolutions.com/restaurant-os) · [Hospitality&nbsp;OS](https://www.shatasolutions.com/hospitality-os) · [Trade&nbsp;OS](https://www.shatasolutions.com/trade-os) · [Energy&nbsp;OS](https://www.shatasolutions.com/energy-os) | Running systems on synthetic or seeded demo data. Open the product page and choose **Open Live Demo** |
+| Installable app | [Healthcare&nbsp;OS](https://www.shatasolutions.com/healthcare-os) | The clinical web app runs publicly; real patient data stays closed until activation gates are met |
+| Open-source tooling | [`engineering-os-tools`](https://github.com/shata-solutions/engineering-os-tools) | The repository checks every Shata repository passes, runnable on your own code in one command |
+| Engineering standards | [shatasolutions.com/engineering](https://www.shatasolutions.com/engineering) | How the products are built, tested, released and operated |
+| Guided demos | [Commerce&nbsp;OS](https://www.shatasolutions.com/commerce-os) · [AutoCare&nbsp;OS](https://www.shatasolutions.com/autocare-os) · [Automotive&nbsp;OS](https://www.shatasolutions.com/automotive-os) · [Markets&nbsp;OS](https://www.shatasolutions.com/markets-os) | Real running systems, shown on request through the product page |
+
 ## Product families
 
 Statuses below are the public status of each product, as stated on
@@ -41,7 +59,7 @@ pages link to the public product site.
 | [**Healthcare&nbsp;OS**](https://www.shatasolutions.com/healthcare-os) | Clinics | Installable clinical and operational web app; real patient data stays closed until activation gates are met | Live app · PHI closed |
 | [**Construction&nbsp;OS**](https://www.shatasolutions.com/construction-os) | Contractors | Quantities, BOQ, variations, procurement, cost control and client billing for office and field | Assisted pilot |
 | [**Trade&nbsp;OS**](https://www.shatasolutions.com/trade-os) | Importers and exporters | One trade case per shipment: compliance, documents, landed cost and an append-only audit trail | Live demo |
-| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · live demo |
+| [**Commerce&nbsp;OS**](https://www.shatasolutions.com/commerce-os) | Retail and supermarkets | Offline-first register, till reconciliation, promotions and loyalty, and reports from an append-only ledger; Supermarket OS is the first vertical | Early access · guided demo |
 | [**AutoCare&nbsp;OS**](https://www.shatasolutions.com/autocare-os) | Auto service centres | Intake to invoice for repair, PPF and detailing, with a verified service history per vehicle | Demo on request |
 | [**Automotive&nbsp;OS**](https://www.shatasolutions.com/automotive-os) | Used-car dealers | True cost per vehicle, owner-only margin, inventory aging, leads and the sales pipeline, Arabic first | Demo ready |
 | [**Energy&nbsp;OS**](https://www.shatasolutions.com/energy-os) | Oil & gas operators | Industrial safety memory: incidents, findings, corrective actions and evidence in one governed workspace with human-decided closure | Live demo |
@@ -58,7 +76,7 @@ pages link to the public product site.
 
 | Product | What it is | Status |
 | --- | --- | --- |
-| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Live demo |
+| [**Self&nbsp;Ordering**](https://www.shatasolutions.com/self-ordering) | Customer, kiosk and admin apps for digital self ordering, bilingual, standalone or inside Restaurant OS | Pilot on request |
 | [**Shata&nbsp;Cashier**](https://www.shatasolutions.com/install/shata-cashier) | Native desktop cashier station for Restaurant OS, activated with a device code from Shata Console | Awaiting code signing |
 
 ### Platform & infrastructure
@@ -151,6 +169,52 @@ mechanically in CI by our open-source tooling.
 | Delivery | Turborepo, GitHub Actions, Docker, Railway, Vercel, infrastructure as code |
 | Quality | Vitest, Playwright, Maestro, contract tests, backup/restore drills |
 
+</details>
+
+### Field notes
+
+Short, real lessons from building these systems. Each one changed how we ship.
+
+<details>
+<summary><b>A green test suite that could not prove the service starts</b></summary>
+<br>
+
+A NestJS service passed its entire Vitest suite and still failed to boot. Vitest compiles
+with esbuild, which does not emit the decorator metadata that Nest's dependency injection
+reads at runtime; `tsc` does. The tests exercised the code, never the compiled artifact.
+The lesson we now apply everywhere: a release check has to start the thing that ships,
+not only the thing that is tested.
+</details>
+
+<details>
+<summary><b>Tokens that every synthetic test accepted and every real user failed</b></summary>
+<br>
+
+An auth verifier accepted HS256 tokens signed with a shared secret, and the test suite
+minted exactly those. The identity provider actually issues ES256 tokens verified through
+its published JWKS, so every real sign-in would have been rejected while CI stayed green.
+Verification now follows the issuer's published keys, and tests use tokens shaped like
+the real ones.
+</details>
+
+<details>
+<summary><b>Releases that refuse code nobody tested</b></summary>
+<br>
+
+A release is only allowed for a commit that has a passing test run for that exact SHA:
+not its branch, not a parent, and not a run where a required job was silently skipped. The
+gate also requires a reviewed migration, a named rollback target and a written release
+record before anything reaches production.
+</details>
+
+<details>
+<summary><b>Documentation merges that do not redeploy production</b></summary>
+<br>
+
+Merging a README should not rebuild three production services. Deploy watch patterns now
+exclude documentation paths, applied as a configuration change that itself triggered no
+deploy, and the next documentation merge was confirmed as a skipped deployment with every
+service still on its previous build.
 </details>
 
 ## Open source
